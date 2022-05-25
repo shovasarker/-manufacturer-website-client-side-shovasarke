@@ -11,7 +11,6 @@ const MyOrders = () => {
   const [user] = useAuthState(auth)
   const getOrders = async () => {
     const { data } = await axiosPrivate.get(`order/${user?.email}`)
-    console.log(data)
     return data
   }
 
