@@ -16,7 +16,11 @@ const HomeParts = () => {
         center
         className={'text-base-100'}
       />
-      <PartsContainer perPage={3} glass />
+      <PartsContainer
+        perPage={3}
+        glass
+        url={'https://mwss-server.herokuapp.com/part'}
+      />
       <Button
         outlined
         className={'!border-white !text-white !flex !mx-auto'}

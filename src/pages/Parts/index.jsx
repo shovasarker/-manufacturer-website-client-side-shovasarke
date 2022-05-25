@@ -6,7 +6,7 @@ const Parts = () => {
   return (
     <main>
       <SectionTitle subTitle={'All Available Parts'} center />
-      <PartsContainer />
+      <PartsContainer url='https://mwss-server.herokuapp.com/part' />
     </main>
   )
 }

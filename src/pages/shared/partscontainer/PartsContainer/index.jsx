@@ -4,14 +4,14 @@ import { useQuery } from 'react-query'
 import Spinner from '../../../standalone/Spinner'
 import PartCard from '../PartCard'
 
-const PartsContainer = ({ perPage, glass }) => {
+const PartsContainer = ({ perPage, glass, url }) => {
   const getParts = async () => {
-    const { data } = await axios.get('https://mwss-server.herokuapp.com/part')
+    const { data } = await axios.get(url)
 
     return data
   }
 
-  const { data: parts, isLoading } = useQuery('parts', getParts)
+  const { data: parts, isLoading } = useQuery(['parts', url], getParts)
 
   if (isLoading) return <Spinner center colored />
 
