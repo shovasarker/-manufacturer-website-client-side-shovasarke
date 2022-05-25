@@ -33,6 +33,11 @@ const MenuItems = () => {
           <li>
             <CustomLink to='/dashboard'>Dashboard</CustomLink>
           </li>
+          <li className='text-base text-neutral'>
+            <CustomLink to='/dashboard/my-profile'>
+              {user?.displayName}
+            </CustomLink>
+          </li>
           <li>
             <Button
               outlined
