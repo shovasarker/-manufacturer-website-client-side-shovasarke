@@ -8,6 +8,7 @@ import CustomLink from '../../../../standalone/CustomLink'
 
 const links = [
   ['/', 'Home'],
+  ['/parts', 'Parts'],
   ['/blogs', 'Blogs'],
   ['/my-portfolio', 'My Portfolio'],
   ['/contact-us', 'Contact Us'],

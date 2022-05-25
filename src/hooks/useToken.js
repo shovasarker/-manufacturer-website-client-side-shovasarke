@@ -13,7 +13,7 @@ const useToken = (user) => {
       }
 
       const { data } = await axios.put(
-        `http://localhost:5000/user/${user?.email}`,
+        `https://mwss-server.herokuapp.com/user/${user?.email}`,
         currentUser
       )
 

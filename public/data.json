@@ -1,0 +1,58 @@
+[
+  {
+    "name": "4 GB RAM",
+    "img": "https://i.ibb.co/5FNP4jn/computer-ram.jpg",
+    "description": "DDR3 PC4-21300 (1500 MHz), 260-Pin SO-DIMM",
+    "price": 39,
+    "minOrder": 50,
+    "inStock": 250
+  },
+  {
+    "name": "4 GB RAM",
+    "img": "https://i.ibb.co/XyLKWsg/ram-2.jpg",
+    "description": "DDR4 PC4-21300 (2666 MHz), 260-Pin SO-DIMM",
+    "price": 49,
+    "minOrder": 50,
+    "inStock": 150
+  },
+  {
+    "name": "8 GB RAM",
+    "img": "https://i.ibb.co/rtF4Qj7/ram-4.jpg",
+    "description": "DDR4 PC4-21300 (2666 MHz), 260-Pin SO-DIMM",
+    "price": 119,
+    "minOrder": 20,
+    "inStock": 100
+  },
+  {
+    "name": "16 GB RAM",
+    "img": "https://i.ibb.co/tJnPW3x/ram-3.jpg",
+    "description": "DDR4 PC4-21300 (3200 MHz), 260-Pin SO-DIMM",
+    "price": 159,
+    "minOrder": 10,
+    "inStock": 100
+  },
+  {
+    "name": "USB to Android B type",
+    "img": "https://i.ibb.co/gwMJxR4/cables-2.jpg",
+    "description": "Cable to connect your PC with your Phone.",
+    "price": 9,
+    "minOrder": 100,
+    "inStock": 1000
+  },
+  {
+    "name": "Power Supply Cable",
+    "img": "https://i.ibb.co/rtwpP80/cables.jpg",
+    "description": "Connect your Parts indide the CPU with the ",
+    "price": 5,
+    "minOrder": 100,
+    "inStock": 1000
+  },
+  {
+    "name": "CPU Cooler",
+    "img": "https://i.ibb.co/9YTJdmL/cooler-2.jpg",
+    "description": "2200 RPMÂ±10%, 3-pin connector ",
+    "price": 9,
+    "minOrder": 80,
+    "inStock": 500
+  }
+]

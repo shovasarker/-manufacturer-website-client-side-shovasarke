@@ -8,6 +8,7 @@ import Header from './pages/shared/header/Header'
 
 import 'react-toastify/dist/ReactToastify.css'
 import Register from './pages/register/Register'
+import Parts from './pages/Parts'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/parts' element={<Parts />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
 
