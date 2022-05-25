@@ -14,9 +14,9 @@ const Login = () => {
   const [token] = useToken(user)
 
   useEffect(() => {
-    if (!user) return
+    if (!token) return
     navigate(from, { replace: true })
-  }, [user, navigate, from])
+  }, [token, navigate, from])
 
   return (
     <main>

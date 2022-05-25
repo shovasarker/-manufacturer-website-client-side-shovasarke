@@ -18,7 +18,7 @@ const MenuItems = () => {
 
   const handleSignOut = () => {
     signOut(auth)
-    localStorage.setItem('accessToken', '')
+    localStorage.removeItem('accessToken')
   }
 
   return (
