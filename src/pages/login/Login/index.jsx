@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { useLocation, useNavigate } from 'react-router-dom'
 import auth from '../../../firebase/firebase.init'
 import EmailLogin from '../EmailLogin'
+import SocialLogin from '../../shared/sociallogin/SocialLogin'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -35,6 +36,7 @@ const Login = () => {
               Create New Accouunt
             </button>
           </p>
+          <SocialLogin />
         </div>
       </div>
     </main>

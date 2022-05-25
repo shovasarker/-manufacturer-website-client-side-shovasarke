@@ -15,6 +15,7 @@ const EmailLogin = () => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm()
 
@@ -26,6 +27,7 @@ const EmailLogin = () => {
   useEffect(() => {
     if (user && !error) {
       toast.success(`Welcome Back, ${user?.user?.displayName}`)
+      reset()
       return
     }
     if (error) {
@@ -33,7 +35,7 @@ const EmailLogin = () => {
       toast.error(error?.message)
       return
     }
-  }, [user, error])
+  }, [user, error, reset])
 
   const email = watch('email')
   const onSubmit = ({ email, password }) => {
