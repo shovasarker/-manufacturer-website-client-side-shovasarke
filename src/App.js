@@ -12,6 +12,10 @@ import Parts from './pages/Parts'
 import SearchResult from './pages/searchresult/SearchResult'
 import Purchase from './pages/purchase/Purchase'
 import RequireAuth from './pages/shared/requireauth/RequireAuth'
+import Dashboard from './pages/dashboard/Dashboard'
+import MyProfile from './pages/dashboard/components/MyProfile'
+import MyOrders from './pages/dashboard/components/MyOrders'
+import MyReviews from './pages/dashboard/components/MyReviews'
 
 function App() {
   return (
@@ -29,6 +33,39 @@ function App() {
           }
         />
         <Route path='search/:searchText' element={<SearchResult />} />
+        <Route
+          path='/dashboard'
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route
+            index
+            element={
+              <RequireAuth>
+                <MyProfile />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='my-orders'
+            element={
+              <RequireAuth>
+                <MyOrders />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='my-reviews'
+            element={
+              <RequireAuth>
+                <MyReviews />
+              </RequireAuth>
+            }
+          />
+        </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
 

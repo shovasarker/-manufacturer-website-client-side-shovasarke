@@ -1,8 +1,10 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
 import { useQuery } from 'react-query'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import auth from '../../../firebase/firebase.init'
 import axiosPrivate from '../../../utilities/Axios.init'
 import Button from '../../standalone/Button'
 import Spinner from '../../standalone/Spinner'
@@ -10,6 +12,7 @@ import Spinner from '../../standalone/Spinner'
 const Purchase = () => {
   const { id } = useParams()
   const navigate = useNavigate()
+  const [user] = useAuthState(auth)
   const [quantity, setQuantity] = useState(0)
   const [loading, setLoading] = useState(false)
   const [bookingId, setBookingId] = useState('')
@@ -60,9 +63,12 @@ const Purchase = () => {
     setLoading(true)
     const newOrder = {
       partId: part?._id,
+      img,
       name,
       price,
       quantity: quantity,
+      customerName: user?.displayName,
+      email: user?.email,
     }
     const { data } = await axiosPrivate.post('/order', newOrder)
 

@@ -9,7 +9,9 @@ const CustomLink = ({ to, children, className }) => {
     <Link
       to={to}
       className={`btn !px-2 !py-1.5 !h-auto !min-h-0 !capitalize text-base font-normal  ${
-        match ? 'btn-neutral text-base-100' : 'btn-ghost text-neutral'
+        match
+          ? 'btn-neutral text-base-100'
+          : 'bg-transparent border-0 text-neutral hover:bg-neutral/10'
       } ${className ? className : ''}`}
     >
       {children}
