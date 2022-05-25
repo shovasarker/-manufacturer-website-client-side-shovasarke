@@ -8,9 +8,11 @@ const Button = ({
   onClick,
   className,
   type = 'button',
+  disabled,
 }) => {
   return (
     <button
+      disabled={disabled}
       type={type}
       onClick={onClick}
       className={`btn ${fullWidth && 'btn-block'} ${

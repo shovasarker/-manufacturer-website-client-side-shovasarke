@@ -30,19 +30,27 @@ const Purchase = () => {
 
   const handleDecreaseQuantity = () => {
     if (quantity <= minOrder) return
-    setQuantity(parseInt(quantity) - 1)
+    setQuantity(quantity - 1)
   }
   const handleIncreaseQuantity = () => {
     if (quantity >= inStock) return
-    setQuantity(parseInt(quantity) + 1)
+    setQuantity(quantity + 1)
+  }
+
+  const handleChange = (e) => {
+    const parseQuantity = parseInt(e.target.value)
+    if (isNaN(parseQuantity)) {
+      setQuantity(1)
+      return
+    }
+
+    setQuantity(parseQuantity)
   }
 
   const handleBooking = async () => {
     if (bookingId) return
-    const parseQuantity = parseInt(quantity)
-    if (isNaN(parseQuantity)) return
 
-    if (parseQuantity < minOrder || parseQuantity > inStock) {
+    if (quantity < minOrder || quantity > inStock) {
       toast.warning(
         `Please Select Order Quantatiy Between ${minOrder} & ${inStock}`
       )
@@ -54,7 +62,7 @@ const Purchase = () => {
       partId: part?._id,
       name,
       price,
-      quantity: parseQuantity,
+      quantity: quantity,
     }
     const { data } = await axiosPrivate.post('/order', newOrder)
 
@@ -110,7 +118,7 @@ const Purchase = () => {
               type={'number'}
               value={quantity}
               className='input input-bordered w-20'
-              onChange={(e) => setQuantity(e.target.value)}
+              onChange={handleChange}
             />
             <Button neutral onClick={handleIncreaseQuantity}>
               +
@@ -119,9 +127,9 @@ const Purchase = () => {
           <div className='flex flex-col md:flex-row justify-start items-center gap-2'>
             <Button
               neutral
-              className={`!w-full md:!w-1/2 ${bookingId && 'opacity-10'}`}
+              className={`!w-full md:!w-1/2 `}
               onClick={handleBooking}
-              disabled={bookingId ? true : false}
+              disabled={bookingId || quantity < minOrder || quantity > inStock}
             >
               {loading ? <Spinner colored small /> : <>Add to My Order</>}
             </Button>
