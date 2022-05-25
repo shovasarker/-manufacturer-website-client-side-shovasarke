@@ -3,10 +3,8 @@ import { IoIosPerson } from 'react-icons/io'
 import { GiMoneyStack, GiMicrochip } from 'react-icons/gi'
 import { MdRateReview } from 'react-icons/md'
 import SectionTitle from '../../../standalone/SectionTitle'
-import { format } from 'date-fns'
 
 const BusinessSummary = () => {
-  console.log(format(new Date(2022, 3, 1), 'T'))
   return (
     <section className='container px-6 md:px-10 lg:px-16 xl:px-20 py-10'>
       <SectionTitle subTitle={'Our Customers Trust Us'} center />
