@@ -10,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import Register from './pages/register/Register'
 import Parts from './pages/Parts'
 import SearchResult from './pages/searchresult/SearchResult'
+import Purchase from './pages/purchase/Purchase'
+import RequireAuth from './pages/shared/requireauth/RequireAuth'
 
 function App() {
   return (
@@ -18,6 +20,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/parts' element={<Parts />} />
+        <Route
+          path='/purchase/:id'
+          element={
+            <RequireAuth>
+              <Purchase />
+            </RequireAuth>
+          }
+        />
         <Route path='search/:searchText' element={<SearchResult />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />

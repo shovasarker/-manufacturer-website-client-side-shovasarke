@@ -14,8 +14,8 @@ const ReviewCard = ({ reviewData, cursor }) => {
         </p>
       </div>
       <div className='my-5 flex justify-start items-center gap-3 text-base-100'>
-        <div class='avatar'>
-          <div class='w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2'>
+        <div className='avatar'>
+          <div className='w-16 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2'>
             <img src={img} alt={name} />
           </div>
         </div>
