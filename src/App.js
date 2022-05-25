@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound'
 import Header from './pages/shared/header/Header'
 
 import 'react-toastify/dist/ReactToastify.css'
+import Register from './pages/register/Register'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
 
         <Route path='*' element={<NotFound />} />
       </Routes>
