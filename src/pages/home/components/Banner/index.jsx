@@ -11,8 +11,11 @@ const Banner = () => {
           <h1 className='text-4xl leading-tight lg:text-5xl lg:leading-tight xl:text-6xl xl:leading-tight font-bold uppercase'>
             Computer Parts Manufacturer
           </h1>
-          <p className='py-6 text-xl lg:text-2xl font-bold'>
+          <p className='mt-6 text-xl lg:text-2xl font-bold'>
             With Over 10 Years of Experience
+          </p>
+          <p className='my-4 text-lg lg:text-xl font-bold'>
+            Also We Ship Parts Worldwide
           </p>
           <Button>
             <span>Contact Us</span>
