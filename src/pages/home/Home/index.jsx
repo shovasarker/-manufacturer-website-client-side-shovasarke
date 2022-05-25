@@ -1,12 +1,15 @@
 import React from 'react'
 import Footer from '../../shared/footer/Footer'
+import Banner from '../components/Banner'
 
 const Home = () => {
   return (
-    <div>
-      <h2 className='text-3xl text-center my-10'>This is Home Page</h2>
+    <>
+      <main>
+        <Banner />
+      </main>
       <Footer />
-    </div>
+    </>
   )
 }
 
