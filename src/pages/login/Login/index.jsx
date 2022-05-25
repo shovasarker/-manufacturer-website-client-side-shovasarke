@@ -4,12 +4,14 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import auth from '../../../firebase/firebase.init'
 import EmailLogin from '../EmailLogin'
 import SocialLogin from '../../shared/sociallogin/SocialLogin'
+import useToken from '../../../hooks/useToken.js'
 
 const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const from = location.state?.from?.pathname || '/'
   const [user] = useAuthState(auth)
+  const [token] = useToken(user)
 
   useEffect(() => {
     if (!user) return
