@@ -8,7 +8,7 @@ const ConfirmationModal = ({ refetch }) => {
   const handleDelete = async () => {
     const { data } = await axiosPrivate.delete(`order/${canceled?._id}`)
     if (data?.deletedCount) {
-      toast.success(`Your Order has been Canceled`)
+      toast.success(`The Order has been Canceled`)
       refetch()
       setCanceled({})
     }

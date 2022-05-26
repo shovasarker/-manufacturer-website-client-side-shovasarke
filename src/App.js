@@ -22,6 +22,7 @@ import Payment from './pages/dashboard/components/Payment'
 import RequireAuthNotAdmin from './pages/standalone/RequireAuthNotAdmin'
 import RequireAdmin from './pages/standalone/RequireAdmin'
 import MakeAdmin from './pages/dashboard/components/MakeAdmin'
+import ManageOrders from './pages/dashboard/components/ManageOrders'
 
 function App() {
   return (
@@ -94,6 +95,14 @@ function App() {
             element={
               <RequireAdmin>
                 <MakeAdmin />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path='manage-orders'
+            element={
+              <RequireAdmin>
+                <ManageOrders />
               </RequireAdmin>
             }
           />

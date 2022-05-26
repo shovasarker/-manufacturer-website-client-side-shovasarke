@@ -67,7 +67,7 @@ const Dashboard = () => {
                   <li>
                     <CustomLink
                       className={'!rounded-none'}
-                      to={'/dashboard/all-orders'}
+                      to={'/dashboard/manage-orders'}
                     >
                       Manage All Orders
                     </CustomLink>
