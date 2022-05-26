@@ -1,9 +1,11 @@
 import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import CancelContext from '../../../../contexts/CancelContext'
 import Button from '../../../standalone/Button'
 
 const OrdersRow = ({ order, index }) => {
-  const { img, name, price, quantity, paid, status } = order
+  const navigate = useNavigate()
+  const { _id, img, name, price, quantity, paid, status, transactionId } = order
   const { setCanceled } = useContext(CancelContext)
 
   const handleCancelOrder = () => {
@@ -31,16 +33,23 @@ const OrdersRow = ({ order, index }) => {
         {paid ? (
           <div>
             <p className='text-success'>Paid</p>
+            <small>
+              t_id: <span className='text-success'>{transactionId}</span>
+            </small>
           </div>
         ) : (
-          <Button className={'btn-sm'}>Pay</Button>
+          <Button
+            className={'btn-sm'}
+            onClick={() => navigate(`/dashboard/payment/${_id}`)}
+          >
+            Pay
+          </Button>
         )}
       </td>
       <td>
         {!paid && (
           <label
             htmlFor='confirmation-modal'
-            outlined
             className={
               ' btn btn-outline btn-sm !border-error !text-error hover:bg-error hover:!text-base-100'
             }

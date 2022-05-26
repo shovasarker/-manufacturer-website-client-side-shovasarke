@@ -1,10 +1,15 @@
 import React, { useContext } from 'react'
+import { useAuthState } from 'react-firebase-hooks/auth'
 import { Outlet } from 'react-router-dom'
 import CancelContext from '../../../contexts/CancelContext'
+import auth from '../../../firebase/firebase.init'
+import useAdmin from '../../../hooks/useAdmin'
 import CustomLink from '../../standalone/CustomLink'
 
 const Dashboard = () => {
   const { canceled } = useContext(CancelContext)
+  const [user] = useAuthState(auth)
+  const [admin, loading] = useAdmin(user)
   return (
     <main className='container px-6'>
       <div className='drawer drawer-mobile'>
@@ -16,37 +21,52 @@ const Dashboard = () => {
         <div className='drawer-content lg:ml-6'>
           <Outlet />
         </div>
-        <div className={`drawer-side ${canceled?._id ? '!-z-10' : '!z-10'}`}>
+        <div className={`drawer-side `}>
           <label htmlFor='dashboard-sidebar' className='drawer-overlay'></label>
-          <ul className='menu py-4 overflow-y-auto w-56 bg-base-100 text-base-content'>
+          <ul
+            className={`menu py-4 overflow-y-auto w-56 bg-base-100 text-base-content ${
+              canceled?._id ? '!-z-10' : '!z-10'
+            }`}
+          >
             {/* <!-- Sidebar content here --> */}
             <li>
               <CustomLink className={'!rounded-none'} to={'/dashboard'}>
                 My Profile
               </CustomLink>
-              <CustomLink
-                className={'!rounded-none'}
-                to={'/dashboard/my-orders'}
-              >
-                My Orders
-              </CustomLink>
             </li>
-            <li>
-              <CustomLink
-                className={'!rounded-none'}
-                to={'/dashboard/my-reviews'}
-              >
-                My Reviews
-              </CustomLink>
-            </li>
-            <li>
-              <CustomLink
-                className={'!rounded-none'}
-                to={'/dashboard/add-review'}
-              >
-                Add a Review
-              </CustomLink>
-            </li>
+            {!loading ? (
+              !admin ? (
+                <>
+                  {' '}
+                  <li>
+                    <CustomLink
+                      className={'!rounded-none'}
+                      to={'/dashboard/my-orders'}
+                    >
+                      My Orders
+                    </CustomLink>
+                  </li>
+                  <li>
+                    <CustomLink
+                      className={'!rounded-none'}
+                      to={'/dashboard/my-reviews'}
+                    >
+                      My Reviews
+                    </CustomLink>
+                  </li>
+                  <li>
+                    <CustomLink
+                      className={'!rounded-none'}
+                      to={'/dashboard/add-review'}
+                    >
+                      Add a Review
+                    </CustomLink>
+                  </li>
+                </>
+              ) : (
+                <></>
+              )
+            ) : null}
           </ul>
         </div>
       </div>

@@ -18,6 +18,7 @@ import MyOrders from './pages/dashboard/components/MyOrders'
 import MyReviews from './pages/dashboard/components/MyReviews'
 import AddReview from './pages/dashboard/components/AddReview'
 import { CancelProvider } from './contexts/CancelContext'
+import Payment from './pages/dashboard/components/Payment'
 
 function App() {
   return (
@@ -74,6 +75,14 @@ function App() {
             element={
               <RequireAuth>
                 <AddReview />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='payment/:id'
+            element={
+              <RequireAuth>
+                <Payment />
               </RequireAuth>
             }
           />

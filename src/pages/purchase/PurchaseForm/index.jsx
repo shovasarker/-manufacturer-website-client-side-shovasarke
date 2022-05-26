@@ -81,11 +81,11 @@ const PurchaseForm = ({ part }) => {
   const handlePayment = async () => {
     if (!bookingId) {
       const id = await handleBooking()
-      navigate(`/dasboard/payment/${id}`)
+      navigate(`/dashboard/payment/${id}`)
     }
     if (bookingId) {
       console.log(bookingId)
-      navigate(`/dasboard/payment/${bookingId}`)
+      navigate(`/dashboard/payment/${bookingId}`)
     }
   }
   return (

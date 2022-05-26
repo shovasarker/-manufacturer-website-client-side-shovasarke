@@ -27,8 +27,8 @@ const MyOrders = () => {
   return (
     <div className='my-10'>
       <SectionTitle subTitle={'My Orders'} className='text-neutral' />
-      <div class='overflow-x-auto w-full my-10 text-neutral'>
-        <table class='table table-compact w-full'>
+      <div className='overflow-x-auto w-full my-10 text-neutral'>
+        <table className='table table-compact w-full'>
           <thead>
             <tr>
               <th></th>
