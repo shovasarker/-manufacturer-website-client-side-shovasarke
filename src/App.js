@@ -23,6 +23,7 @@ import RequireAuthNotAdmin from './pages/standalone/RequireAuthNotAdmin'
 import RequireAdmin from './pages/standalone/RequireAdmin'
 import MakeAdmin from './pages/dashboard/components/MakeAdmin'
 import ManageOrders from './pages/dashboard/components/ManageOrders'
+import ManageParts from './pages/dashboard/components/MangeParts'
 
 function App() {
   return (
@@ -103,6 +104,14 @@ function App() {
             element={
               <RequireAdmin>
                 <ManageOrders />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path='manage-parts'
+            element={
+              <RequireAdmin>
+                <ManageParts />
               </RequireAdmin>
             }
           />

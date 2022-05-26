@@ -12,7 +12,7 @@ const Dashboard = () => {
   const [admin, loading] = useAdmin(user)
   return (
     <main className='container px-6'>
-      <div className='drawer drawer-mobile'>
+      <div className='drawer !h-full drawer-mobile'>
         <input
           id='dashboard-sidebar'
           type='checkbox'
@@ -91,7 +91,7 @@ const Dashboard = () => {
                   <li>
                     <CustomLink
                       className={'!rounded-none'}
-                      to={'/dashboard/all-parts'}
+                      to={'/dashboard/manage-parts'}
                     >
                       Manage Parts
                     </CustomLink>

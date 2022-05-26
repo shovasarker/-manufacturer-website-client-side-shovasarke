@@ -1,32 +1,24 @@
 import React, { useContext } from 'react'
-import { useAuthState } from 'react-firebase-hooks/auth'
 import { useQuery } from 'react-query'
 import CancelContext from '../../../../contexts/CancelContext'
-import auth from '../../../../firebase/firebase.init'
 import axiosPrivate from '../../../../utilities/Axios.init'
 import SectionTitle from '../../../standalone/SectionTitle'
 import Spinner from '../../../standalone/Spinner'
 import ConfirmationModal from '../ConfirmationModal'
-import OrdersRow from '../OrdersRow'
+import ManagePartsRow from '../ManagePartsRow'
 
-const MyOrders = () => {
-  const [user] = useAuthState(auth)
+const ManageParts = () => {
   const { canceled } = useContext(CancelContext)
-  const getOrders = async () => {
-    const { data } = await axiosPrivate.get(`order/${user?.email}`)
+  const getParts = async () => {
+    const { data } = await axiosPrivate.get('part')
     return data
   }
-
-  const {
-    data: orders,
-    isLoading,
-    refetch,
-  } = useQuery(['orders', user?.email], getOrders)
+  const { data: parts, isLoading, refetch } = useQuery('parts', getParts)
 
   if (isLoading) return <Spinner center colored />
   return (
     <div className='my-10'>
-      <SectionTitle subTitle={'My Orders'} className='text-neutral' />
+      <SectionTitle subTitle={'All Available Parts'} className='text-neutral' />
       <div className='overflow-x-auto w-full my-10 text-neutral'>
         <table className='table table-compact w-full'>
           <thead>
@@ -35,29 +27,26 @@ const MyOrders = () => {
               <th>Image</th>
               <th>Parts Name</th>
               <th>Price</th>
-              <th>Quantity</th>
-              <th>Status</th>
-              <th>Payment</th>
+              <th>Min order</th>
+              <th>In Stock</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {orders?.map((order, index) => (
-              <OrdersRow key={order?._id} order={order} index={index + 1} />
+            {parts?.map((part, index) => (
+              <ManagePartsRow key={part?._id} part={part} index={index + 1} />
             ))}
           </tbody>
         </table>
-        {!orders?.length && (
-          <p className='text-center text-neutral my-10'>
-            You Didnot place any order till Now.
-          </p>
+        {!parts?.length && (
+          <p className='text-center text-neutral my-10'>No Parts Found.</p>
         )}
       </div>
       {canceled?._id && (
-        <ConfirmationModal urlPart={'order'} refetch={refetch} />
+        <ConfirmationModal urlPart={'part'} refetch={refetch} />
       )}
     </div>
   )
 }
 
-export default MyOrders
+export default ManageParts
