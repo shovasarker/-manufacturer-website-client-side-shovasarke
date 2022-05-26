@@ -15,6 +15,9 @@ const Input = ({
   inputClass,
   className,
   bordered,
+  value,
+  readOnly,
+  step,
 }) => {
   return (
     <div className={`${className ? className : ''}`}>
@@ -36,6 +39,9 @@ const Input = ({
           miv: min,
           max: max,
         })}
+        value={value}
+        readOnly={readOnly}
+        step={step}
       />
       {error && (
         <label className='label !py-1'>

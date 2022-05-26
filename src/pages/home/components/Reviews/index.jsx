@@ -26,7 +26,7 @@ const Reviews = () => {
         center
         className={'!text-base-100'}
       />
-      <div className='container px-6 md:px-10 lg:px-16 xl:px-20 my-10'>
+      <div className='container px-6 md:px-10 my-10'>
         <Splide
           aria-label='reviews'
           options={{

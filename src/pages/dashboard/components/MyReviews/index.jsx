@@ -12,7 +12,7 @@ const MyReviews = () => {
 
   const getReviews = async () => {
     const { data } = await axiosPrivate.get(`review/${user?.email}`)
-    console.log(data)
+    return data
   }
 
   const { data: reviews, isLoading } = useQuery(
@@ -23,10 +23,10 @@ const MyReviews = () => {
   if (isLoading) return <Spinner center colored />
 
   return (
-    <div className='my-10'>
+    <div className='my-10 px-6'>
       <SectionTitle subTitle={'My Reviews'} />
       {reviews?.length > 0 ? (
-        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 my-10'>
           {reviews?.map((review) => (
             <ReviewCard key={review?._id} reviewData={review} />
           ))}

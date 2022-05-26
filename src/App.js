@@ -16,6 +16,8 @@ import Dashboard from './pages/dashboard/Dashboard'
 import MyProfile from './pages/dashboard/components/MyProfile'
 import MyOrders from './pages/dashboard/components/MyOrders'
 import MyReviews from './pages/dashboard/components/MyReviews'
+import AddReview from './pages/dashboard/components/AddReview'
+import { CancelProvider } from './contexts/CancelContext'
 
 function App() {
   return (
@@ -37,7 +39,9 @@ function App() {
           path='/dashboard'
           element={
             <RequireAuth>
-              <Dashboard />
+              <CancelProvider>
+                <Dashboard />
+              </CancelProvider>
             </RequireAuth>
           }
         >
@@ -62,6 +66,14 @@ function App() {
             element={
               <RequireAuth>
                 <MyReviews />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path='add-review'
+            element={
+              <RequireAuth>
+                <AddReview />
               </RequireAuth>
             }
           />

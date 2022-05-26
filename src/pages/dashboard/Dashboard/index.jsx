@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Outlet } from 'react-router-dom'
+import CancelContext from '../../../contexts/CancelContext'
 import CustomLink from '../../standalone/CustomLink'
 
 const Dashboard = () => {
+  const { canceled } = useContext(CancelContext)
   return (
     <main className='container px-6'>
       <div className='drawer drawer-mobile'>
@@ -14,7 +16,7 @@ const Dashboard = () => {
         <div className='drawer-content lg:ml-6'>
           <Outlet />
         </div>
-        <div className='drawer-side'>
+        <div className={`drawer-side ${canceled?._id ? '!-z-10' : '!z-10'}`}>
           <label htmlFor='dashboard-sidebar' className='drawer-overlay'></label>
           <ul className='menu py-4 overflow-y-auto w-56 bg-base-100 text-base-content'>
             {/* <!-- Sidebar content here --> */}
