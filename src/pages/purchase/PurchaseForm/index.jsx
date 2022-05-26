@@ -127,7 +127,9 @@ const PurchaseForm = ({ part }) => {
         onChange={(e) => setAddress(e.target.value)}
         required
       />
-      <p className='text-lg'>Select Quantiy : </p>
+      <p className='text-lg'>
+        Select Quantiy ( between {minOrder} and {inStock} ) :{' '}
+      </p>
       <div className='flex justify-start items-center gap-2'>
         <Button neutral onClick={handleDecreaseQuantity}>
           -

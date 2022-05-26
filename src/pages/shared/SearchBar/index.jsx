@@ -21,7 +21,7 @@ const SearchBar = () => {
           name='search'
           register={register}
           required='Search Text Cannot be Empty!'
-          placeholder={'Search Any Parts Name'}
+          placeholder={'Search Any Parts by Name'}
           bordered
           inputClass={'rounded-full md:!py-3 !h-auto'}
           className='w-full'

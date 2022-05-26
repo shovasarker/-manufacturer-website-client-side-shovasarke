@@ -11,7 +11,6 @@ const links = [
   ['/parts', 'Parts'],
   ['/blogs', 'Blogs'],
   ['/my-portfolio', 'My Portfolio'],
-  ['/contact-us', 'Contact Us'],
 ]
 
 const MenuItems = () => {
