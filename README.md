@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Abacus Parts
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Live Website url: [https://abacus-parts.web.app/](https://abacus-parts.web.app/)
 
-## Available Scripts
+## Features and Functionality :
 
-In the project directory, you can run:
+- This Project has 9 pages including NotFound Page.
 
-### `npm start`
+  - Home
+  - Parts
+  - Blogs
+  - MyPortFolio
+  - DashBoard
+  - Search
+  - Login
+  - Register
+  - NotFound
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Every Page Has one Common Components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - Header
 
-### `npm test`
+- Home page has 7 unique sections or components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - Banner
+  - SearchBar
+  - HomeParts
+  - BusinessSummary
+  - Popular
+  - Reviews
+  - Footer
 
-### `npm run build`
+- Parts has one Component
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - PartsContainer which is also common in HomeParts section and Items page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Home page shows Banner and 3-cards in the Parts Section and 4 summary in the BusinessSummary Section and small info about Popular computer part in the Popular Section and 6 reviews shown in the reviews section.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- we can go to Purchase page by clicking place order button in the PartCard in HomeParts Section.
+- Parts page shows all the Items in a grid
+- Purchase Page Shows Details About a Particular part and also has an extra component for getting customer deatails for booking purpose. We can either apply for booking the part by clicking add to my order or by clicking pay now we can go to Payment page after booking is complete.
+- Blogs page has Answer's of 6 question's.
+- Login page is used to Login to website via firebase
+- Register page is used to Register to website via firebase
+- Login and Register both contains SocialLogin component which is used to sign in with google.
+- Dashboard has total 9 nested Routes
+  - MyProfile Route is Open for all user
+  - User Routes
+    - MyOrders
+    - MyReviews
+    - AddReview
+    - Payment
+  - Admin Routes
+    - ManageOrders
+    - ManageParts
+    - MakeAdmin
+    - AddPart
 
-### `npm run eject`
+## List of **Libraries** use For this Project:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. react-router-dom (for routing)
+2. firebase (for authenticating and hosting)
+3. react-firebase-hooks(for using firebase authentication easily)
+4. react-icons (for using icons)
+5. tailwindcss (framework for css)
+6. postcss and autoprefixer
+7. react-splide (for making crousel in the reviews section)
+8. react-hook-form (for form validation)
+9. react-toastify (for showing toast)
+10. axios (for fetching data from the server)
+11. react-query (for fetching asynchronous data)
+12. react-rating (for making rating in the review section)
+13. daisyui (for making components design)
+14. date-fns (for formating date)
