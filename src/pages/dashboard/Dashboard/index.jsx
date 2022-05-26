@@ -7,7 +7,7 @@ import useAdmin from '../../../hooks/useAdmin'
 import CustomLink from '../../standalone/CustomLink'
 
 const Dashboard = () => {
-  const { canceled } = useContext(CancelContext)
+  const { canceled, selectedUser } = useContext(CancelContext)
   const [user] = useAuthState(auth)
   const [admin, loading] = useAdmin(user)
   return (
@@ -25,7 +25,7 @@ const Dashboard = () => {
           <label htmlFor='dashboard-sidebar' className='drawer-overlay'></label>
           <ul
             className={`menu py-4 overflow-y-auto w-56 bg-base-100 text-base-content ${
-              canceled?._id ? '!-z-10' : '!z-10'
+              canceled?._id || selectedUser?.email ? '!-z-10' : '!z-10'
             }`}
           >
             {/* <!-- Sidebar content here --> */}
@@ -37,7 +37,6 @@ const Dashboard = () => {
             {!loading ? (
               !admin ? (
                 <>
-                  {' '}
                   <li>
                     <CustomLink
                       className={'!rounded-none'}
@@ -64,7 +63,40 @@ const Dashboard = () => {
                   </li>
                 </>
               ) : (
-                <></>
+                <>
+                  <li>
+                    <CustomLink
+                      className={'!rounded-none'}
+                      to={'/dashboard/all-orders'}
+                    >
+                      Manage All Orders
+                    </CustomLink>
+                  </li>
+                  <li>
+                    <CustomLink
+                      className={'!rounded-none'}
+                      to={'/dashboard/add-parts'}
+                    >
+                      Add Parts
+                    </CustomLink>
+                  </li>
+                  <li>
+                    <CustomLink
+                      className={'!rounded-none'}
+                      to={'/dashboard/make-admin'}
+                    >
+                      Make Admin
+                    </CustomLink>
+                  </li>
+                  <li>
+                    <CustomLink
+                      className={'!rounded-none'}
+                      to={'/dashboard/all-parts'}
+                    >
+                      Manage Parts
+                    </CustomLink>
+                  </li>
+                </>
               )
             ) : null}
           </ul>

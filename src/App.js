@@ -19,6 +19,9 @@ import MyReviews from './pages/dashboard/components/MyReviews'
 import AddReview from './pages/dashboard/components/AddReview'
 import { CancelProvider } from './contexts/CancelContext'
 import Payment from './pages/dashboard/components/Payment'
+import RequireAuthNotAdmin from './pages/standalone/RequireAuthNotAdmin'
+import RequireAdmin from './pages/standalone/RequireAdmin'
+import MakeAdmin from './pages/dashboard/components/MakeAdmin'
 
 function App() {
   return (
@@ -57,33 +60,41 @@ function App() {
           <Route
             path='my-orders'
             element={
-              <RequireAuth>
+              <RequireAuthNotAdmin>
                 <MyOrders />
-              </RequireAuth>
+              </RequireAuthNotAdmin>
             }
           />
           <Route
             path='my-reviews'
             element={
-              <RequireAuth>
+              <RequireAuthNotAdmin>
                 <MyReviews />
-              </RequireAuth>
+              </RequireAuthNotAdmin>
             }
           />
           <Route
             path='add-review'
             element={
-              <RequireAuth>
+              <RequireAuthNotAdmin>
                 <AddReview />
-              </RequireAuth>
+              </RequireAuthNotAdmin>
             }
           />
           <Route
             path='payment/:id'
             element={
-              <RequireAuth>
+              <RequireAuthNotAdmin>
                 <Payment />
-              </RequireAuth>
+              </RequireAuthNotAdmin>
+            }
+          />
+          <Route
+            path='make-admin'
+            element={
+              <RequireAdmin>
+                <MakeAdmin />
+              </RequireAdmin>
             }
           />
         </Route>
