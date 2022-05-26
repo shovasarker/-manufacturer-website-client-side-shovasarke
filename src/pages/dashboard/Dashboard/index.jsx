@@ -75,7 +75,7 @@ const Dashboard = () => {
                   <li>
                     <CustomLink
                       className={'!rounded-none'}
-                      to={'/dashboard/add-parts'}
+                      to={'/dashboard/add-part'}
                     >
                       Add Parts
                     </CustomLink>
