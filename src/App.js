@@ -26,6 +26,7 @@ import ManageOrders from './pages/dashboard/components/ManageOrders'
 import ManageParts from './pages/dashboard/components/MangeParts'
 import AddPart from './pages/dashboard/components/AddPart'
 import MyPortFolio from './pages/MyPortFolio'
+import Blogs from './pages/Blogs'
 
 function App() {
   return (
@@ -126,6 +127,7 @@ function App() {
             }
           />
         </Route>
+        <Route path='/blogs' element={<Blogs />} />
         <Route path='/my-portfolio' element={<MyPortFolio />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
