@@ -25,6 +25,7 @@ import MakeAdmin from './pages/dashboard/components/MakeAdmin'
 import ManageOrders from './pages/dashboard/components/ManageOrders'
 import ManageParts from './pages/dashboard/components/MangeParts'
 import AddPart from './pages/dashboard/components/AddPart'
+import MyPortFolio from './pages/MyPortFolio'
 
 function App() {
   return (
@@ -125,6 +126,7 @@ function App() {
             }
           />
         </Route>
+        <Route path='/my-portfolio' element={<MyPortFolio />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
 
