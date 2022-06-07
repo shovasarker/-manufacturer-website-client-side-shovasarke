@@ -24,7 +24,7 @@ const Reviews = () => {
       <SectionTitle
         subTitle={'What our Customers Has to Say'}
         center
-        className={'!text-base-100'}
+        className={'!text-base-100 px-6 md:px-10'}
       />
       <div className='container px-6 md:px-10 my-10'>
         <Splide

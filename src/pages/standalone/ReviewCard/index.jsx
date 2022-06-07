@@ -6,14 +6,18 @@ import blankProfile from '../../../assets/images/blank-profile.svg'
 
 const ReviewCard = ({ reviewData, cursor }) => {
   const { name, email, address, img, review, rating } = reviewData
+
   return (
     <div
       className={`${
         cursor ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'
       } h-full w-full flex flex-col justify-between items-start`}
     >
-      <div className='p-4 bg-base-100 rounded-lg shadow-xl'>
-        <p className='text-base tracking-wider font-medium text-neutral'>
+      <div className='w-full overflow-hidden p-4 bg-base-100 rounded-lg shadow-xl'>
+        <p
+          title={review}
+          className='text-base tracking-wider font-medium text-neutral break-words'
+        >
           {review}
         </p>
         <div className='flex justify-start items-center gap-2 mt-3 text-neutral'>

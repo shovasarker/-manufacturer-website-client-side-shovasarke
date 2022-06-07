@@ -8,21 +8,21 @@ const Popular = () => {
   const navigate = useNavigate()
   return (
     <section className='bg-neutral'>
-      <div class='container px-6 md:px-10 lg:px-16 xl:px-20 h-auto py-10'>
+      <div className='container px-6 md:px-10 lg:px-16 xl:px-20 h-auto py-10'>
         <SectionTitle
           subTitle={'Our Most Popular Computer Part'}
           center
           className={'!text-base-100'}
         />
-        <div class='w-full flex flex-col lg:flex-row justify-between items-center gap-5 my-10'>
+        <div className='w-full flex flex-col lg:flex-row justify-between items-center gap-5 my-10'>
           <img
             src='https://i.ibb.co/XyLKWsg/ram-2.jpg'
             alt='4 GB DDR4 RAM'
-            class='w-full md:w-1/2 lg:w-2/5 rounded-lg shadow-2xl'
+            className='w-full md:w-1/2 lg:w-2/5 rounded-lg shadow-2xl'
           />
           <div className='w-full lg:w-1/2 text-base-100'>
-            <h1 class='text-5xl font-bold'>4 GB DDR4 RAM</h1>
-            <p class='mt-6'>DDR4 PC4-21300 (2666 MHz), 260-Pin SO-DIMM</p>
+            <h1 className='text-5xl font-bold'>4 GB DDR4 RAM</h1>
+            <p className='mt-6'>DDR4 PC4-21300 (2666 MHz), 260-Pin SO-DIMM</p>
             <p className='mt-3'>
               Price : <span className='font-semibold'>$39</span>
             </p>
