@@ -2,7 +2,13 @@
 
 ### Live Website url: [https://abacus-parts.web.app/](https://abacus-parts.web.app/)
 
+Computer Parts Manufacturer Website whose sole purpose is to take orders from different clients.
+
 ## Features and Functionality :
+
+- Implemented Admin feature in the Dashboard, where admin can perform various kinds of operation like add a new product, manage products, manage orders from clients and make other users admin.
+- Used firebase for authentication (both email and google sign-in were implemented) purposes and Stripe API for Payment System.
+- Used MongoDB for the Backend Database and Express JS for developing the Backend Server.
 
 - This Project has 9 pages including NotFound Page.
 
@@ -56,7 +62,7 @@
     - MakeAdmin
     - AddPart
 
-## List of **Libraries** use For this Project:
+## List of **Technology/Libraries** use For this Project:
 
 1. react-router-dom (for routing)
 2. firebase (for authenticating and hosting)
